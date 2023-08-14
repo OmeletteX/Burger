@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Delight</title>
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="LP.css">
+</head>
+<body>
+<!-- The parent component for the curtain effect -->
+<div class="curtain">
+
+  <!-- The upper curtain panel (includes loader logo and line) -->
+  <div class="curtain__panel curtain__panel--up">
+    <!-- Loader logo -->
+    <header id="loader-logo">
+      <img src="BD LP Logo.png" alt="Burger Delight Logo">
+    </header>
+
+    <!-- Loader line -->
+    <div id="loader-line">
+      <!-- Add a loading animation here (e.g., a spinning icon) -->
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <!-- The lower curtain panel -->
+  <div class="curtain__panel curtain__panel--down"></div>
+
+</div> <!-- End of curtain -->
+
+
+
+<!-- The main page (initially hidden) -->
+<div class="main-page hidden">
+  <div class="content hidden">
+    <div id="background-video-container">
+      <video id="background-video" autoplay loop muted>
+        <source src="backgroundvideo.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Link to your JavaScript file (optional) -->
+  <script src="LP.js"></script>
+
+</body>
+</html>
