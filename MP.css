@@ -1,0 +1,293 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*transition animation*/
+.transition-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+    background-blend-mode: multiply;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s ease-out;
+}
+
+.transition-1.is-active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+/* Set the body as a flex container to center-align vertically */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body takes at least the viewport height */
+}
+
+/* Style for the full-screen video */
+#background-video-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style for the content area */
+.content {
+    position: fixed;
+    width: 100%;
+    height: 30%; /* Set the desired height value */
+    z-index: 1; /* Position the content in front of the video */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+    animation: slideInContent ease-in-out 1s forwards 1.5s;
+    left: -100%; /* Start from the right of the screen */
+
+}
+
+
+
+/* Animation for sliding in the content from the left */
+@keyframes slideInContent {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Add animation for sliding in the content from the left */
+@keyframes slideOutContent {
+    from {
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%);    }
+    to {
+        left: 200%;
+    }
+}
+
+
+
+
+/* Style for the content text */
+.content h1 {
+    font-size: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 3.5rem; /* Add margin-top instead of margin to preserve the bottom margin */
+    font-family: 'Balthazar', serif;
+    color: #ffffff;
+    letter-spacing: 25px; /* Adjust the letter spacing as needed */
+}
+/* Style for the navigation bar */
+.navbar {
+    position: fixed;
+    z-index: 1; /* Position the content in front of the video */
+    top: 56%; /* Center vertically */
+    width: 100%;
+    right: -100%; /* Start from the right of the screen */
+    animation: slideInNav ease-in-out 1s forwards 1.5s;
+}
+
+/* Animation for sliding in the navigation bar from the right */
+@keyframes slideInNav {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0; /* Slide in to the center of the screen */
+    }
+}
+
+/* Add animation for sliding in the navigation bar from the right */
+@keyframes slideOutNav {
+    from {
+        right: 0;
+    }
+    to {
+        right: 150%
+    }
+}
+
+
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+.navbar li {
+    margin: 0 50px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Balthazar', serif;
+    font-size: 1.2rem;
+    transition: color 0.3s, font-size 0.5s ease-in-out; /* Adjust font-size transition timing function */
+    border-bottom: 1px solid #ffde00; /* Set the border bottom to yellow and thinner */
+    padding-bottom: 1px; /* Add a little padding at the bottom to control the distance of the underline */
+
+}
+
+.navbar a:hover {
+    color: #ffde00;
+    font-size: 1.5rem; /* Increase the font size slightly */
+}
+
+
+
+
+
+
+/*reservation animation*/
+#reservationContainer {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+    border-radius: 10px;
+    overflow: hidden;
+    width: 80%;
+    height: 500px; /* Change this value to your desired height */
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font for body */
+}
+
+/* Add animation for reservation container */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%); /* Start off the screen */
+    }
+    100% {
+        transform: translateY(0); /* Move to the normal position */
+    }
+}
+
+/* Add animation for sliding out the reservation container to the bottom */
+@keyframes slideOutToBottom {
+    0% {
+        transform: translateY(0); /* Start from the normal position */
+    }
+    100% {
+        transform: translateY(150%); /* Move to the bottom */
+    }
+}
+
+
+/* Style headings */
+
+#reservationDate {
+    flex: 1; /* Make the width half of the rules section */
+    padding: 30px;
+}
+
+
+
+#reservationDate h2 {
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'Balthazar', serif; /* Use Balthazar font for reservationDate */
+    text-decoration: underline; /* Add underline */
+    text-underline-offset: 0.3em; /* Adjust the value to change the spacing */
+    margin-bottom: 60px;
+}
+
+#reservationDate h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 10px; /* Add space between paragraphs */
+    margin-top: 30px; /* Add space between paragraphs */
+
+
+}
+
+#reservationDate p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5; /* Add some line spacing for readability */
+}
+
+
+
+/* Style headings */
+
+#reservationRules {
+    flex: 2; /* Make the width twice that of the date section */
+    padding: 30px;
+}
+
+
+#reservationRules p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5; /* Add some line spacing for readability */
+    margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+/* Style list items */
+#reservationRules ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 20px; /* Add some padding to the list */
+}
+
+#reservationRules li {
+    color: #ffffff;
+    font-size: 14px; /* Slightly increase font size for better readability */
+    line-height: 1.4; /* Add some line spacing for list items */
+    margin-bottom: 12px; /* Adjust margin for list items */
+}
+
+
+
+/* Style the "Make a Reservation" button */
+.reservationButton {
+    border: none;
+    padding: 12px 50px;
+    font-family: 'Balthazar', serif; /* Use Balthazar font for reservationDate */
+    font-size: 18px;
+    letter-spacing: 1px; /* Adjust the letter spacing */
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1); /* Same as the semi-transparent background */
+    color: #ffffff; /* Text color is white for visibility */
+    margin-top: 100px;
+    margin-left: 60px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+}
+
+
+.reservationButton:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker shade on hover */
+    transform: scale(1.05); /* Slightly increase the scale on hover */
+}
+
+
+
+
+
+
