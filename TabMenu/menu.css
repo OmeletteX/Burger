@@ -1,0 +1,612 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+
+
+/*transition animation*/
+.transition-1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background-blend-mode: multiply;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s ease-out;
+}
+
+.transition-1.is-active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  background: #d6dde5;
+  background: linear-gradient(90deg, #403d3d, #555555);
+}
+
+.page1 {
+  position: relative;
+  width: 900px;
+  height: 800px;
+  margin: 0 auto;
+  margin-top: 200px; /* Adjust the margin-top value to create the desired space */
+}
+
+.smallphoto1 {
+  position: absolute;
+  top: 150px;
+  left: 0px;
+  transform: rotate(45deg);
+  transition: 0.8s ease-out all
+}
+
+.smallphoto1-active {
+  left: -250px;
+  transform: rotate(0deg)
+}
+
+.body-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #2D3A4B;
+  color: #fff;
+  transition: 0.6s ease-out all;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+.page1-title {
+  width: 100%;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 200px;
+  text-align: center;
+  font-family: "Oswald";
+  font-weight: 700;
+  letter-spacing: 20px;
+  transition: 0.6s ease-out all
+}
+
+.page1-title-active {
+  font-size: 180px;
+  text-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4)
+}
+
+.page1-desc {
+  z-index: 98;
+  position: absolute;
+  top: 220px;
+  width: 85%;
+  left: 235px;
+  padding: 50px;
+  padding-left: 110px;
+  padding-top: 150px;
+  transition: 0.6s ease-out all
+}
+
+.page1-desc-active {
+  left: 215px;
+  top: 250px;
+  padding-left: 120px;
+  background: rgba(91, 105, 118, 1); /* Change the alpha value to 1 */
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4)
+}
+
+.page1-desc h3 {
+  font-size: 3rem;
+  font-family: 'Balthazar', serif;
+  letter-spacing: 25px; /* Adjust the letter spacing as needed */
+  color: #ffffff;
+
+}
+
+.page1-desc hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 280px;
+  opacity: 0.5
+}
+
+.page1-desc p {
+  width: 460px;
+  line-height: 40px;
+  font-size: 1.2rem;
+  opacity: 0.8
+}
+
+.page2 {
+  position: relative;
+  width: 900px;
+  height: 800px;
+  margin: 0 auto
+}
+
+.pg2-middle-wrap {
+  position: absolute;
+  top: 50%;
+  margin-top: -250px;
+  left: 0;
+  width: 100%;
+  height: 500px
+}
+
+.pg2-green-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -15%;
+  right: 0%;
+  background: rgb(105, 52, 0);
+  transition: 0.6s ease-out all
+}
+
+.pg2-green-back-active {
+  width: 130%;
+  right: -20%;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4)
+}
+
+.pg2-white-desc {
+  position: absolute;
+  width: 60%;
+  top: 0%;
+  left: 0%;
+  background: rgba(91, 105, 118, 1); /* Change the alpha value to 1 */
+  color: #ffffff;
+  text-align: center;
+  transition: 1s ease-out all
+}
+
+.pg2-white-desc-active {
+  top: -10%;
+  left: -20%;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4)
+}
+
+.pg2-white-desc .hr1 {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  opacity: 0.4
+}
+
+.pg2-white-desc .hr2 {
+  width: 40%;
+  margin: 0 auto;
+  opacity: 0.4;
+  margin-bottom: 5px
+}
+
+.pg2-white-desc .hr3 {
+  width: 60%;
+  margin: 0 auto;
+  opacity: 0.4
+}
+
+.pg2-white-desc .hr4 {
+  width: 60%;
+  margin: 0 auto;
+  opacity: 0.4;
+  margin-bottom: 5px
+}
+
+.pg2-white-desc .hr5 {
+  width: 40%;
+  margin: 0 auto;
+  opacity: 0.4
+}
+
+.pg2-white-desc .hr6 {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  opacity: 0.4
+}
+
+.pg2-white-desc h3 {
+  color: #D39F8C;
+  margin: 40px;
+  font-size: 3rem;
+  font-family: 'Balthazar', serif;
+  letter-spacing: 5px; /* Adjust the letter spacing as needed */
+}
+
+.pg2-white-desc h2 {
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 4rem;
+  letter-spacing: 10px;
+  opacity: 0.8
+}
+
+.pg2-white-desc p {
+  width: 60%;
+  font-size: 1.4rem;
+  opacity: 0.8;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  line-height: 30px
+}
+
+.pg2-photo-wrap {
+  position: absolute;
+  width: 70%;
+  height: 120%;
+  top: -20%;
+  right: 0;
+  background: #333;
+  overflow: hidden;
+  transition: 0.6s ease-out all
+}
+
+.pg2-photo-wrap-active {
+  right: -10%;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4)
+}
+
+.pg2-photo {
+  position: absolute;
+  left: 0;
+  width: 120%;
+  height: 100%;
+  background-image: url("burger1.png");
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  transition: 4s ease-out all
+}
+
+.pg2-photo-active {
+  left: -15%
+}
+
+.smallphoto2 {
+  position: absolute;
+  top: 400px;
+  left: 0px;
+  transform: rotate(45deg);
+  transition: 0.8s ease-out all
+}
+
+.smallphoto2-active {
+  left: -250px;
+  transform: rotate(0deg)
+}
+
+
+.page3 {
+  position: relative;
+  width: 900px;
+  height: 800px;
+  margin: 0 auto
+}
+
+.pg3-middle-wrap {
+  position: absolute;
+  top: 50%;
+  margin-top: -250px;
+  left: 0;
+  width: 100%;
+  height: 500px
+}
+
+.pg3-red-back {
+  position: absolute;
+  width: 100%;
+  height: 115%;
+  top: -20%;
+  left: 0;
+  background: rgb(253, 238, 198);
+  transition: 0.6s ease-out all
+}
+
+.pg3-red-back-active {
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4);
+  width: 130%;
+  left: -20%
+}
+
+.pg3-white-desc {
+  position: absolute;
+  width: 60%;
+  bottom: 0;
+  left: 0;
+  background: rgba(91, 105, 118, 1); /* Change the alpha value to 1 */
+  color: #ffffff;
+  text-align: center;
+  transition: 0.4s ease-out all
+}
+
+.pg3-white-desc-active {
+  bottom: -10%;
+  left: -10%;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4)
+}
+
+.pg3-white-desc .hr1 {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  opacity: 0.4
+}
+
+.pg3-white-desc .hr2 {
+  width: 40%;
+  margin: 0 auto;
+  opacity: 0.4;
+  margin-bottom: 5px
+}
+
+.pg3-white-desc .hr3 {
+  width: 60%;
+  margin: 0 auto;
+  opacity: 0.4
+}
+
+.pg3-white-desc .hr4 {
+  width: 60%;
+  margin: 0 auto;
+  opacity: 0.4;
+  margin-bottom: 5px
+}
+
+.pg3-white-desc .hr5 {
+  width: 40%;
+  margin: 0 auto;
+  opacity: 0.4
+}
+
+.pg3-white-desc .hr6 {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  opacity: 0.4
+}
+
+.pg3-white-desc h3 {
+  color: #D39F8C;
+  margin: 40px;
+  font-size: 3rem;
+  font-family: 'Balthazar', serif;
+}
+
+.pg3-white-desc h2 {
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 4rem;
+  letter-spacing: 10px;
+  opacity: 0.8
+}
+
+.pg3-white-desc p {
+  width: 60%;
+  font-size: 1.4rem;
+  opacity: 0.8;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  line-height: 30px
+}
+
+.pg3-photo-wrap {
+  position: absolute;
+  width: 100%;
+  height: 105%;
+  bottom: 0;
+  right: 0;
+  background: #333;
+  overflow: hidden;
+  transition: 1s ease-out all
+}
+
+.pg3-photo-wrap-active {
+  width: 100%;
+  right: -20%;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4)
+}
+
+.pg3-photo {
+  position: absolute;
+  left: -20%;
+  width: 120%;
+  height: 100%;
+  background-image: url("burger2.png");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  transition: 4s ease-out all
+}
+
+.pg3-photo-active {
+  left: 15%
+}
+
+.smallphoto3 {
+  position: absolute;
+  top: 350px;
+  bottom: 100px;
+  right: 0px;
+  transition: 0.6s ease-out all
+}
+
+.smallphoto3-active {
+  right: -300px
+}
+
+.page4 {
+  position: relative;
+  width: 900px;
+  height: 800px;
+  margin: 0 auto;
+}
+
+.pg4-middle-wrap {
+  position: absolute;
+  top: 50%;
+  margin-top: -250px;
+  left: 0;
+  width: 100%;
+  height: 500px
+}
+
+.pg4-bezh-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  background: rgb(142, 194, 152);
+  transition: 0.6s ease-out all
+}
+
+.pg4-bezh-back-active {
+  width: 130%;
+  bottom: -15%;
+  right: -20%;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4)
+}
+
+.pg4-white-desc {
+  position: absolute;
+  width: 60%;
+  top: 0;
+  left: 0;
+  background: rgba(91, 105, 118, 1); /* Change the alpha value to 1 */
+  color: #ffffff;
+  text-align: center;
+  transition: 1s ease-out all
+}
+
+.pg4-white-desc-active {
+  width: 60%;
+  top: -10%;
+  left: -20%;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4)
+}
+
+.pg4-white-desc .hr1 {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  opacity: 0.4
+}
+
+.pg4-white-desc .hr2 {
+  width: 40%;
+  margin: 0 auto;
+  opacity: 0.4;
+  margin-bottom: 5px
+}
+
+.pg4-white-desc .hr3 {
+  width: 60%;
+  margin: 0 auto;
+  opacity: 0.4
+}
+
+.pg4-white-desc .hr4 {
+  width: 60%;
+  margin: 0 auto;
+  opacity: 0.4;
+  margin-bottom: 5px
+}
+
+.pg4-white-desc .hr5 {
+  width: 40%;
+  margin: 0 auto;
+  opacity: 0.4
+}
+
+.pg4-white-desc .hr6 {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  opacity: 0.4
+}
+
+.pg4-white-desc h3 {
+  color: #D39F8C;
+  margin: 40px;
+  font-size: 3rem;
+  font-family: 'Balthazar', serif;
+}
+
+.pg4-white-desc h2 {
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 4rem;
+  letter-spacing: 10px;
+  opacity: 0.8
+}
+
+.pg4-white-desc p {
+  width: 60%;
+  font-size: 1.4rem;
+  opacity: 0.8;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  line-height: 30px
+}
+
+.pg4-photo-wrap {
+  position: absolute;
+  width: 70%;
+  height: 120%;
+  top: -20%;
+  right: 0;
+  background: #333;
+  overflow: hidden;
+  transition: 1s ease-out all
+}
+
+.pg4-photo-wrap-active {
+  right: -10%;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.4)
+}
+
+.pg4-photo {
+  position: absolute;
+  left: 0;
+  width: 120%;
+  height: 100%;
+  background-image: url("burger3.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: 4s ease-out all
+}
+
+.pg4-photo-active {
+  left: -20%
+}
+
+.smallphoto4 {
+  position: absolute;
+  top: 400px;
+  bottom: 20px;
+  left: 0px;
+  transform: rotate(30deg);
+  transition: 0.6s ease-out all
+}
+
+.smallphoto4-active {
+  left: -300px;
+  transform: rotate(0deg)
+}
+

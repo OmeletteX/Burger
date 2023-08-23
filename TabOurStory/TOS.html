@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Balthazar&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet'>
+  <link rel="stylesheet" href="TOS.css">
+
+</head>
+<body>
+
+<!-- Transition element -->
+<div class="transition transition-1 is-active"></div>
+
+<div class="container">
+  <section id="one" style="display: flex;">
+    <div style="flex: 2;">
+      <img src="Burger%20Delight%20Logo.png" alt="Burger Delight Logo" class="burger-logo">
+      <p class="slogan">SPREADING BURGER LOVE GLOBALLY. <br> UNITING PALETTES WITH IRRESISTIBLE FLAVORS. <br> BRIDGING CULTURE THROUGH A SHARED PASSION FOR <br> <span id="slogan-text">CULINARY DELIGHT</span> </p>
+    </div>
+    <div style="flex: 3;">
+      <img src="burger4.jpeg" alt="<Man holding Burger" class="burger-image">
+    </div>
+  </section>
+
+
+  <section id="two">
+    <!-- App Container -->
+    <div class="app">
+      <!-- Card List Section -->
+      <div class="cardList">
+        <button class="cardList__btn btn btn--left">
+          <svg class="icon">
+            <use xlink:href="#arrow-left"></use>
+          </svg>
+
+        </button>
+
+        <!-- Cards Wrapper -->
+        <div class="cards__wrapper">
+          <!-- Current Card -->
+          <div class="card current--card">
+            <div class="card__image">
+              <img src="chef1.avif" alt="" />
+            </div>
+          </div>
+
+          <!-- Next Card -->
+          <div class="card next--card">
+            <div class="card__image">
+              <img src="chef2.jpeg" alt="" />
+            </div>
+          </div>
+
+          <!-- Previous Card -->
+          <div class="card previous--card">
+            <div class="card__image">
+              <img src="chef3.jpeg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <button class="cardList__btn btn btn--right">
+          <svg class="icon">
+            <use xlink:href="#arrow-right"></use>
+          </svg>
+
+        </button>
+      </div>
+
+      <!-- Info List Section -->
+      <div class="infoList">
+        <div class="info__wrapper">
+          <!-- Current Info -->
+          <div class="info current--info">
+            <h1 class="text name">Sakura Ishikawa</h1>
+            <h4 class="text location">Head Chef</h4>
+            <p class="text description">Creating taste sensations that awaken your palate.</p>
+          </div>
+
+          <!-- Next Info -->
+          <div class="info next--info">
+            <h1 class="text name">Pierre Dupont</h1>
+            <h4 class="text location">Sous Chef</h4>
+            <p class="text description">Crafting burgers that redefine deliciousness</p>
+          </div>
+
+          <!-- Previous Info -->
+          <div class="info previous--info">
+            <h1 class="text name">Jamal Williams</h1>
+            <h4 class="text location">Chef de Partie</h4>
+            <p class="text description">Bringing passion to every plate I create.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Images -->
+      <div class="app__bg">
+        <div class="app__bg__image current--image">
+          <img src="burger1.png" alt="" />
+        </div>
+        <div class="app__bg__image next--image">
+          <img src="burger2.png" alt="" />
+        </div>
+        <div class="app__bg__image previous--image">
+          <img src="burger3.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Icon SVG Definitions -->
+    <svg class="icons" style="display: none;">
+      <symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+        <polyline points='328 112 184 256 328 400'
+                  style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+      </symbol>
+      <symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+        <polyline points='184 112 328 256 184 400'
+                  style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+      </symbol>
+    </svg>
+  </section>
+
+</div>
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js'></script>
+<script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
+<script src="TOS.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font for body */
+}
+
+/* Style for the full-screen video */
+#background-video-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Combined section styles */
+#reservationContainer {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+    border-radius: 10px;
+    overflow: hidden;
+    width: 80%;
+    height: 500px; /* Change this value to your desired height */
+
+}
+
+
+/* Style headings */
+
+#reservationDate {
+    flex: 1; /* Make the width half of the rules section */
+    padding: 30px;
+}
+
+
+
+#reservationDate h2 {
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'Balthazar', serif; /* Use Balthazar font for reservationDate */
+    text-decoration: underline; /* Add underline */
+    text-underline-offset: 0.3em; /* Adjust the value to change the spacing */
+    margin-bottom: 60px;
+}
+
+#reservationDate h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 10px; /* Add space between paragraphs */
+    margin-top: 30px; /* Add space between paragraphs */
+
+
+}
+
+#reservationDate p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5; /* Add some line spacing for readability */
+}
+
+
+
+/* Style headings */
+
+#reservationRules {
+    flex: 2; /* Make the width twice that of the date section */
+    padding: 30px;
+}
+
+
+#reservationRules p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5; /* Add some line spacing for readability */
+    margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+/* Style list items */
+#reservationRules ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 20px; /* Add some padding to the list */
+}
+
+#reservationRules li {
+    color: #ffffff;
+    font-size: 14px; /* Slightly increase font size for better readability */
+    line-height: 1.4; /* Add some line spacing for list items */
+    margin-bottom: 12px; /* Adjust margin for list items */
+}
+
+
+
+/* Style the "Make a Reservation" button */
+.reservationButton {
+    border: none;
+    padding: 12px 50px;
+    font-family: 'Balthazar', serif; /* Use Balthazar font for reservationDate */
+    font-size: 18px;
+    letter-spacing: 1px; /* Adjust the letter spacing */
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1); /* Same as the semi-transparent background */
+    color: #ffffff; /* Text color is white for visibility */
+    margin-top: 90px;
+    margin-left: 40px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+}
+
+
+.reservationButton:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker shade on hover */
+    transform: scale(1.05); /* Slightly increase the scale on hover */
+}

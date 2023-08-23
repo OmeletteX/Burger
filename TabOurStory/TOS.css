@@ -1,0 +1,465 @@
+
+/* Reset default margin and padding */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set up body properties */
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container for smooth scrolling */
+.container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    scroll-snap-type: y mandatory; /* Scroll snapping behavior */
+}
+
+section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: center; /* Scroll snapping alignment */
+}
+section:not(#two) {
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+    background-blend-mode: multiply;}
+
+
+/* Section 1 CSS */
+#one {
+    display: flex;
+}
+
+#one > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+
+
+/* Styling for the burger image */
+.burger-image {
+    width: 100%;
+    max-height: 100%; /* Limit the image height to the column height */
+    object-fit: cover; /* Maintain aspect ratio and cover the column */
+    object-position: 100% 100%; /* Move the image to the left */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    border-radius: 10px; /* Rounded corners */
+    animation: slideInColumn 1.5s ease-in-out forwards; /* Apply the animation with cubic bezier easing */
+}
+
+/* Animation for sliding in the columns from the top */
+@keyframes slideInColumn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0; /* Start with 0 opacity */
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1; /* End with full opacity */
+    }
+}
+
+
+
+
+/* Styling for the Burger Delight logo */
+.burger-logo {
+    max-width: 400px; /* Add a max-width to prevent the logo from becoming too large */
+    margin-top: -10rem; /* Adjust the margin-top to align with the text */
+    margin-bottom: -6rem; /* Adjust the margin-top to align with the text */
+    animation: slideInLogo 1.5s ease-in-out forwards; /* Apply the animation to the logo */
+}
+
+@keyframes slideInLogo {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Styling for the slogan  paragraph */
+.slogan {
+    font-size: 1rem;
+    font-family: "Montserrat", serif;
+    color: #ffffff;
+    max-width: 80%;
+    line-height: 3;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 222, 0, 0.8);
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 1.5s forwards;
+}
+
+/* Animation for fading in the text */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/*Section 2 CSS*/
+
+/* Root variables for consistent styling across the page */
+:root {
+    --card-width: 250px;
+    --card-height: 400px;
+    --card-transition-duration: 800ms;
+    --card-transition-easing: ease;
+}
+
+
+/* Button styles */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+button:focus {
+    outline: none;
+    border: none;
+}
+
+/* Main application container */
+.app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background images container */
+.app__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+/* Styling for the background overlay */
+.app__bg::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+/* Styling for background images and transitions */
+.app__bg__image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0));
+    width: 180%;
+    height: 180%;
+    transition: transform 1000ms ease, opacity 1000ms ease;
+    overflow: hidden;
+}
+.app__bg__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.app__bg__image.current--image {
+    opacity: 1;
+    --image-translate-offset: 0;
+}
+.app__bg__image.previous--image, .app__bg__image.next--image {
+    opacity: 0;
+}
+.app__bg__image.previous--image {
+    --image-translate-offset: -25%;
+}
+.app__bg__image.next--image {
+    --image-translate-offset: 25%;
+}
+
+/* Styling for the card list section */
+.cardList {
+    position: absolute;
+    width: calc(3 * var(--card-width));
+    height: auto;
+}
+
+/* Styling for card navigation buttons */
+.cardList__btn {
+    --btn-size: 35px;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+.cardList__btn.btn--left {
+    left: -5%;
+}
+.cardList__btn.btn--right {
+    right: -5%;
+}
+.cardList__btn .icon {
+    width: 100%;
+    height: 100%;
+}
+.cardList__btn .icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for the cards wrapper */
+.cardList .cards__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+/* Styling for individual cards */
+.card {
+    --card-translateY-offset: 100vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateX(var(--card-translateX-offset)) translateY(var(--card-translateY-offset)) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset));
+    display: inline-block;
+    width: var(--card-width);
+    height: var(--card-height);
+    transition: transform var(--card-transition-duration) var(--card-transition-easing);
+    user-select: none;
+}
+
+/* Styling for card overlay */
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+    transition: opacity var(--card-transition-duration) var(--card-transition-easing);
+    opacity: calc(1 - var(--opacity));
+}
+
+/* Styling for card images */
+.card__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.card__image img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Styling for the current card */
+.card.current--card {
+    --current-card-rotation-offset: 0;
+    --card-translateX-offset: 0;
+    --card-rotation-offset: var(--current-card-rotation-offset);
+    --card-scale-offset: 1.2;
+    --opacity: 0.8;
+}
+
+/* Styling for the previous card */
+.card.previous--card {
+    --card-translateX-offset: calc(-1 * var(--card-width) * 1.1);
+    --card-rotation-offset: 25deg;
+}
+
+/* Styling for the next card */
+.card.next--card {
+    --card-translateX-offset: calc(var(--card-width) * 1.1);
+    --card-rotation-offset: -25deg;
+}
+
+/* Styling for previous and next cards */
+.card.previous--card, .card.next--card {
+    --card-scale-offset: 0.9;
+    --opacity: 0.4;
+}
+
+/* Styling for the info list section */
+.infoList {
+    position: absolute;
+    width: calc(2 * var(--card-width));
+    height: var(--card-height);
+    pointer-events: none;
+    top: 45%
+}
+
+/* Styling for info wrapper */
+.infoList .info__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* Styling for individual info sections */
+
+.info {
+    margin-bottom: calc(var(--card-height) / 8);
+    transform: translateZ(2rem);
+    transition: transform var(--card-transition-duration) var(--card-transition-easing);
+}
+.info .text {
+    position: relative;
+    font-family: "Montserrat", serif;
+    font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
+    white-space: nowrap;
+    color: #fff;
+    width: fit-content;
+}
+.info .name,
+.info .location {
+    text-transform: uppercase;
+}
+.info .location {
+    font-weight: 800;
+}
+.info .location {
+    --mg-left: 40px;
+    --text-size-offset: 0.12;
+    font-weight: 600;
+    margin-left: var(--mg-left);
+    margin-bottom: calc(var(--mg-left) / 2);
+    padding-bottom: 0.8rem;
+}
+.info .location::before, .info .location::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    left: 0;
+    --translate-x: calc(-1 * var(--mg-left));
+    transform: translate(var(--translate-x), -50%);}
+
+.info .location::before {
+    top: 50%;
+    width: 20px;
+    height: 5px;
+}
+.info .location::after {
+    bottom: 0;
+    width: 60px;
+    height: 2px;
+}
+.info .description {
+    --text-size-offset: 0.065;
+    font-weight: 500;
+    color: #ffde00;
+
+}
+.info.current--info {
+    opacity: 1;
+    display: block;
+}
+.info.previous--info, .info.next--info {
+    opacity: 0;
+    display: none;
+}
+
+
+
+
+/*Section 3 CSS*/
+
+
+/* Content styling */
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+    color: #ffde00;
+    width: 100%; /* Adjust the width to cover more of the page horizontally */
+
+}
+
+.animated {
+    display: flex; /* Set to flex to arrange letters in a row */
+    align-items: center; /* Align items vertically in the center */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    text-align: center;
+    padding: 20px;
+    flex-direction: column; /* Arrange lines vertically */
+    color: #ffde00;
+
+
+}
+
+.animated .before {
+    content: "";
+    width: 100%;
+    background: #ffde00;
+    opacity: 0.3;
+    bottom: 0;
+    height: 0;
+    left: 0;
+    position: absolute;
+}
+
+.animated .letter {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.line {
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    margin-bottom: 2rem; /* Add spacing between lines */
+    text-shadow: 0 0 15px rgba(255, 222, 0, 1); /* Brighter glowing text shadow */
+
+}
